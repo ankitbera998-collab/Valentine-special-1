@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Neha ❤️</title>
+
+<style>
+body{
+  margin:0;
+  padding:0;
+  background:#d1006c;
+  height:100vh;
+  overflow:hidden;
+  font-family: 'Segoe UI', sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  color:white;
+  text-align:center;
+}
+
+/* Floating big hearts */
+.heart{
+  position:absolute;
+  font-size:60px;
+  color:#ff4da6;
+  animation: float 8s linear infinite;
+  opacity:0.7;
+}
+
+@keyframes float{
+  from{transform:translateY(100vh);}
+  to{transform:translateY(-10vh);}
+}
+
+/* Center name animation */
+.name{
+  font-size:70px;
+  font-weight:bold;
+  animation: rise 2s ease forwards;
+}
+
+@keyframes rise{
+  from{transform:translateY(80px); opacity:0;}
+  to{transform:translateY(0); opacity:1;}
+}
+
+/* Love circle */
+.circle{
+  margin-top:20px;
+  font-size:30px;
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+
+button{
+  margin-top:30px;
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  font-size:18px;
+  background:white;
+  color:#d1006c;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+
+#secret{
+  margin-top:25px;
+  font-size:20px;
+  display:none;
+  max-width:80%;
+}
+
+/* Roses bottom */
+.roses{
+  position:absolute;
+  bottom:10px;
+  font-size:30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="name">NEHA</div>
+
+<div class="circle">❤️ LOVE ❤️ LOVE ❤️ LOVE ❤️</div>
+
+<button onclick="showMessage()">Tap for Secret 💌</button>
+
+<div id="secret">
+Happy Valentine's Day Neha ❤️<br><br>
+You are always special to me and will be always...<br>
+I love you more than anything.<br>
+I love you forever and ever and ever ❤️
+</div>
+
+<div class="roses">
+🌹🌹🌹🌹🌹🌹🌹🌹🌹🌹
+</div>
+
+<script>
+function showMessage(){
+  document.getElementById("secret").style.display="block";
+}
+
+function createHeart(){
+  const heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="💖";
+  heart.style.left=Math.random()*100+"vw";
+  document.body.appendChild(heart);
+  setTimeout(()=>{heart.remove()},8000);
+}
+
+setInterval(createHeart,800);
+</script>
+
+</body>
+</html>
